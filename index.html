@@ -65,7 +65,6 @@
             opacity: 0.7;
         }
 
-        /* Search Bar Style */
         .search-container {
             display: flex;
             justify-content: center;
@@ -98,7 +97,6 @@
             color: #333;
         }
 
-        /* Section Styling */
         .section-header {
             display: flex;
             align-items: baseline;
@@ -116,7 +114,6 @@
 
         .section-count { color: #333; font-size: 0.8rem; }
 
-        /* Grid & Member Card */
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
@@ -141,7 +138,6 @@
             transform: scale(1.02);
         }
 
-        /* Highlight Color per Rank */
         .founder:hover { border-bottom: 2px solid var(--founder-color); }
         .leader:hover { border-bottom: 2px solid var(--leader-color); }
         .member:hover { border-bottom: 2px solid var(--member-color); }
@@ -240,9 +236,20 @@
 
         <div class="section-header">
             <div class="section-title">FOUNDERS</div>
-            <div class="section-count">/ 06</div>
+            <div class="section-count">/ 03</div>
         </div>
         <div class="grid">
+            <div class="member-card founder">
+                <div class="avatar-wrap">
+                    <div class="avatar-box"></div>
+                    <div class="status-dot"></div>
+                </div>
+                <div class="info">
+                    <span class="role-badge role-founder"><i class="fas fa-crown"></i> FOUNDER</span>
+                    <h4 class="name">Oshi Pennales</h4>
+                    <a href="https://www.facebook.com/oshi.changretta" target="_blank" class="social-link">Facebook</a>
+                </div>
+            </div>
             <div class="member-card founder">
                 <div class="avatar-wrap">
                     <div class="avatar-box"></div>
@@ -261,50 +268,57 @@
                 </div>
                 <div class="info">
                     <span class="role-badge role-founder"><i class="fas fa-crown"></i> FOUNDER</span>
-                    <h4 class="name">Floyd Pennales</h4>
-                    <a href="https://www.facebook.com/crexpradiohead" target="_blank" class="social-link">Facebook</a>
-                </div>
-            </div>
-            <div class="member-card founder">
-                <div class="avatar-wrap">
-                    <div class="avatar-box"></div>
-                    <div class="status-dot"></div>
-                </div>
-                <div class="info">
-                    <span class="role-badge role-founder"><i class="fas fa-crown"></i> FOUNDER</span>
                     <h4 class="name">Blackk Pennales</h4>
                     <a href="https://www.facebook.com/nothwinterfellz" target="_blank" class="social-link">Facebook</a>
                 </div>
             </div>
-            <div class="member-card founder">
+        </div>
+
+        <div class="section-header">
+            <div class="section-title">LEADERS</div>
+            <div class="section-count">/ 04</div>
+        </div>
+        <div class="grid">
+            <div class="member-card leader">
                 <div class="avatar-wrap">
                     <div class="avatar-box"></div>
                     <div class="status-dot"></div>
                 </div>
                 <div class="info">
-                    <span class="role-badge role-founder"><i class="fas fa-crown"></i> FOUNDER</span>
+                    <span class="role-badge role-leader"><i class="fas fa-star"></i> LEADER</span>
+                    <h4 class="name">Floyd Pennales</h4>
+                    <a href="https://www.facebook.com/crexpradiohead" target="_blank" class="social-link">Facebook</a>
+                </div>
+            </div>
+            <div class="member-card leader">
+                <div class="avatar-wrap">
+                    <div class="avatar-box"></div>
+                    <div class="status-dot"></div>
+                </div>
+                <div class="info">
+                    <span class="role-badge role-leader"><i class="fas fa-star"></i> LEADER</span>
                     <h4 class="name">Tail Pennales</h4>
                     <a href="https://www.facebook.com/tail.kodomo" target="_blank" class="social-link">Facebook</a>
                 </div>
             </div>
-            <div class="member-card founder">
+            <div class="member-card leader">
                 <div class="avatar-wrap">
                     <div class="avatar-box"></div>
                     <div class="status-dot"></div>
                 </div>
                 <div class="info">
-                    <span class="role-badge role-founder"><i class="fas fa-crown"></i> FOUNDER</span>
+                    <span class="role-badge role-leader"><i class="fas fa-star"></i> LEADER</span>
                     <h4 class="name">Traff Pennales</h4>
                     <a href="https://www.facebook.com/traff.amgz" target="_blank" class="social-link">Facebook</a>
                 </div>
             </div>
-            <div class="member-card founder">
+            <div class="member-card leader">
                 <div class="avatar-wrap">
                     <div class="avatar-box"></div>
                     <div class="status-dot"></div>
                 </div>
                 <div class="info">
-                    <span class="role-badge role-founder"><i class="fas fa-crown"></i> FOUNDER</span>
+                    <span class="role-badge role-leader"><i class="fas fa-star"></i> LEADER</span>
                     <h4 class="name">Highflex Pennales</h4>
                     <a href="https://www.facebook.com/highflex.wintalord" target="_blank" class="social-link">Facebook</a>
                 </div>
@@ -312,61 +326,10 @@
         </div>
 
         <div class="section-header">
-            <div class="section-title">LEADERS</div>
-            <div class="section-count">/ 03</div>
-        </div>
-        <div class="grid">
-            <div class="member-card leader">
-                <div class="avatar-wrap">
-                    <div class="avatar-box"></div>
-                    <div class="status-dot"></div>
-                </div>
-                <div class="info">
-                    <span class="role-badge role-leader"><i class="fas fa-star"></i> LEADER</span>
-                    <h4 class="name">Real Winterfall</h4>
-                    <a href="#" class="social-link">Facebook</a>
-                </div>
-            </div>
-            <div class="member-card leader">
-                <div class="avatar-wrap">
-                    <div class="avatar-box"></div>
-                    <div class="status-dot"></div>
-                </div>
-                <div class="info">
-                    <span class="role-badge role-leader"><i class="fas fa-star"></i> LEADER</span>
-                    <h4 class="name">Sky Winterfall Fitzroy</h4>
-                    <a href="#" class="social-link">Facebook</a>
-                </div>
-            </div>
-            <div class="member-card leader">
-                <div class="avatar-wrap">
-                    <div class="avatar-box"></div>
-                    <div class="status-dot"></div>
-                </div>
-                <div class="info">
-                    <span class="role-badge role-leader"><i class="fas fa-star"></i> LEADER</span>
-                    <h4 class="name">Seeyou Temspeed</h4>
-                    <a href="#" class="social-link">Facebook</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="section-header">
             <div class="section-title">MEMBERS</div>
-            <div class="section-count">/ 02</div>
+            <div class="section-count">/ --</div>
         </div>
         <div class="grid">
-            <div class="member-card member">
-                <div class="avatar-wrap">
-                    <div class="avatar-box"></div>
-                    <div class="status-dot"></div>
-                </div>
-                <div class="info">
-                    <span class="role-badge role-member">MEMBER</span>
-                    <h4 class="name">Coco Napolce</h4>
-                    <a href="#" class="social-link">Facebook</a>
-                </div>
-            </div>
             <div class="member-card member">
                 <div class="avatar-wrap">
                     <div class="avatar-box" style="background-image: none; display: flex; align-items: center; justify-content: center; background: #111;">
