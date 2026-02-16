@@ -9,8 +9,9 @@
     
     <style>
         :root {
-            --primary: #f7a322;
-            --secondary: #e74c3c;
+            --primary: #f7a322; /* สีทองสำหรับ Founder */
+            --secondary: #e74c3c; /* สีแดงสำหรับ Leader */
+            --member-color: #3498db; /* สีฟ้าสำหรับ Member */
             --bg-dark: #050505;
             --card-bg: rgba(15, 15, 15, 0.7);
             --border-color: rgba(255, 255, 255, 0.1);
@@ -28,7 +29,6 @@
             overflow-x: hidden;
         }
 
-        /* --- Cyber Grid Background --- */
         .bg-grid {
             position: fixed;
             top: 0;
@@ -79,50 +79,14 @@
             transform: skewX(-20deg);
         }
 
-        /* --- Search Bar --- */
-        .search-wrapper {
-            display: flex;
-            justify-content: flex-end;
-            margin-bottom: 40px;
-        }
-
-        .search-box {
-            position: relative;
-            width: 300px;
-        }
-
-        .search-box input {
-            width: 100%;
-            background: rgba(255,255,255,0.03);
-            border: none;
-            border-bottom: 2px solid var(--border-color);
-            padding: 12px 40px 10px 10px;
-            color: #fff;
-            font-family: 'Rajdhani', sans-serif;
-            font-size: 1.1rem;
-            transition: 0.4s;
-            outline: none;
-        }
-
-        .search-box input:focus {
-            border-bottom-color: var(--primary);
-            background: rgba(255,255,255,0.08);
-        }
-
-        .search-box i {
-            position: absolute;
-            right: 10px;
-            bottom: 15px;
-            color: var(--primary);
-        }
-
         /* --- Section Styling --- */
         .section-title {
             font-family: 'Orbitron', sans-serif;
             font-size: 1rem;
             letter-spacing: 5px;
-            color: #444;
+            color: #666;
             margin-bottom: 30px;
+            margin-top: 60px;
             display: flex;
             align-items: center;
             gap: 20px;
@@ -132,7 +96,7 @@
             content: "";
             height: 1px;
             flex-grow: 1;
-            background: linear-gradient(to right, #222, transparent);
+            background: linear-gradient(to right, #333, transparent);
         }
 
         /* --- Grid & Cards --- */
@@ -140,7 +104,7 @@
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
             gap: 25px;
-            margin-bottom: 80px;
+            margin-bottom: 40px;
         }
 
         .member-card {
@@ -163,19 +127,17 @@
             left: 0;
             width: 4px;
             height: 0;
-            background: var(--primary);
+            background: var(--card-accent, var(--primary));
             transition: 0.3s;
         }
 
         .member-card:hover {
             transform: scale(1.02);
             border-color: rgba(255,255,255,0.2);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5), 0 0 20px var(--accent-glow);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
 
-        .member-card:hover::before {
-            height: 100%;
-        }
+        .member-card:hover::before { height: 100%; }
 
         .avatar-wrap {
             position: relative;
@@ -195,9 +157,7 @@
             transition: 0.3s;
         }
 
-        .member-card:hover .avatar-box {
-            filter: grayscale(0);
-        }
+        .member-card:hover .avatar-box { filter: grayscale(0); }
 
         .status-pulse {
             position: absolute;
@@ -211,9 +171,7 @@
             box-shadow: 0 0 8px var(--online-green);
         }
 
-        .info {
-            flex-grow: 1;
-        }
+        .info { flex-grow: 1; }
 
         .role-tag {
             font-size: 0.65rem;
@@ -224,7 +182,14 @@
             display: block;
         }
 
-        .member-text { color: #888; }
+        /* Color Variations */
+        .founder-card { --card-accent: var(--primary); }
+        .leader-card { --card-accent: var(--secondary); }
+        .member-card-type { --card-accent: var(--member-color); }
+
+        .founder-text { color: var(--primary); }
+        .leader-text { color: var(--secondary); }
+        .member-text { color: var(--member-color); }
 
         .name {
             font-family: 'Orbitron', sans-serif;
@@ -242,9 +207,7 @@
             transition: 0.3s;
         }
 
-        .social-btn:hover {
-            color: #fff;
-        }
+        .social-btn:hover { color: #fff; }
 
         .footer-tag {
             text-align: center;
@@ -255,12 +218,6 @@
             padding-bottom: 50px;
         }
 
-        .hidden { display: none; }
-
-        @media (max-width: 600px) {
-            .grid { grid-template-columns: 1fr; }
-            .search-box { width: 100%; }
-        }
     </style>
 </head>
 <body>
@@ -270,49 +227,5 @@
     <div class="container">
         <header class="main-header">
             <h1>PENNALES</h1>
-            <div class="sub-tag">PENNALES ELITE UNIT</div>
-        </header>
-
-        <div class="search-wrapper">
-            <div class="search-box">
-                <i class="fas fa-search"></i>
-                <input type="text" id="memberSearch" placeholder="SEARCH OPERATIVES..." onkeyup="searchFunction()">
-            </div>
-        </div>
-
-        <div class="section-title">01_OPERATIVES</div>
-        <div class="grid" id="memberGrid">
-            <div class="member-card" data-name="Oshi Pennales">
-                <div class="avatar-wrap">
-                    <div class="avatar-box"></div>
-                    <div class="status-pulse"></div>
-                </div>
-                <div class="info">
-                    <span class="role-tag member-text"><i class="fas fa-user"></i> Member</span>
-                    <h4 class="name">Oshi Pennales</h4>
-                    <a href="https://www.facebook.com/oshi.changretta" target="_blank" class="social-btn">FACEBOOK</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="footer-tag">PENNALES SYSTEM DESIGN // BY OSHI</div>
-    </div>
-
-    <script>
-        function searchFunction() {
-            const input = document.getElementById('memberSearch');
-            const filter = input.value.toUpperCase();
-            const cards = document.getElementsByClassName('member-card');
-
-            for (let i = 0; i < cards.length; i++) {
-                const name = cards[i].getAttribute('data-name');
-                if (name.toUpperCase().indexOf(filter) > -1) {
-                    cards[i].classList.remove('hidden');
-                } else {
-                    cards[i].classList.add('hidden');
-                }
-            }
-        }
-    </script>
-</body>
-</html>
+            <div class="sub-tag">PENNALES ELITE SYSTEM</div>
+        </
